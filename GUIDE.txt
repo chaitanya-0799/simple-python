@@ -1,0 +1,1 @@
+To run this application on browser use "public_ip":"mapped port to container"/user
