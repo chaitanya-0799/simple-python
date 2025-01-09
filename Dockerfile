@@ -1,3 +1,20 @@
+#STAGE: 1
+
+#Using an official ubuntu runtime as the base image
+FROM ubuntu:latest as git
+
+#Installing the requirements
+RUN apt-get update && apt-get install -y git
+
+#Set the working directory inside the container
+WORKDIR /usr/git
+
+# Cloning the git repo
+RUN git clone https://github.com/chaitanya-0799/simple-python.git
+
+
+#STAGE: 2
+
 # Use an official Python runtime as the base image
 FROM python:3.9-slim
 
