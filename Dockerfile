@@ -19,10 +19,10 @@ RUN git clone https://github.com/chaitanya-0799/simple-python.git
 FROM python:3.9-slim
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /usr/app
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY --from=git /usr/git/requirements.txt /usr/git/app.py /usr/app/
 
 # Install the Python dependencies from the requirements.txt file
 RUN pip install --no-cache-dir -r requirements.txt
